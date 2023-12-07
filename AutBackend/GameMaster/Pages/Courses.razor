@@ -1,0 +1,32 @@
+﻿@page "/"
+@inherits CoursesBase
+
+
+@if (Courses == null)
+{
+	<h3>Loading...</h3>
+}
+else
+{
+	<h3>Courses</h3>
+
+	@if (Courses.Count() > 0)
+	{
+		<MudTable Items="@Courses">
+			<HeaderContent>
+					<MudTh scope="row">id</MudTh>
+			</HeaderContent>
+			<RowTemplate>
+				@*@foreach (var item in Courses)
+				{
+					
+					<tr>
+						<th scope="row"><a href="/@item.Id">@item.Id</a></th>
+					</tr>
+					
+				}*@
+				<MudTd ><a href="/@context.Id">@context.Id</a></MudTd>
+			</RowTemplate>
+		</MudTable>
+	}
+}

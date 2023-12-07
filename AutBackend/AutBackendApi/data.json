@@ -1,0 +1,44 @@
+[
+  {
+    "Id": 0,
+    "Name": "Harry Potter",
+    "LastUpdate": 1682253028,
+    "IsActivated": true,
+    "Coordinates": "0 0 0"
+  },
+  {
+    "Id": 1,
+    "Name": "Hermione Granger",
+    "LastUpdate": 1682253029,
+    "IsActivated": true,
+    "Coordinates": "0 0 0"
+  },
+  {
+    "Id": 2,
+    "Name": "Ron Weasley",
+    "LastUpdate": 1682253030,
+    "IsActivated": true,
+    "Coordinates": "0 0 0"
+  },
+  {
+    "Id": 3,
+    "Name": "Albus Dumbledore",
+    "LastUpdate": 1682253004,
+    "IsActivated": true,
+    "Coordinates": "0 0 0"
+  },
+  {
+    "Id": 4,
+    "Name": "Severus Snape",
+    "LastUpdate": 1682253054,
+    "IsActivated": true,
+    "Coordinates": "0 0 0"
+  },
+  {
+    "Id": 5,
+    "Name": "Lord Voldemort",
+    "LastUpdate": 1682253032,
+    "IsActivated": true,
+    "Coordinates": "0 0 0"
+  }
+]

@@ -1,0 +1,59 @@
+﻿@page "/{courseId:int}"
+@inherits TasksBase
+
+
+@if (Tasks == null)
+{
+	<h3>Loading...</h3>
+}
+else
+{
+	<h3>Tasks</h3>
+
+	@if (Tasks.Count() > 0)
+	{
+		<MudTable Items="Tasks" CanCancelEdit=true OnCommitEditClick="@(() => SendHintButton_Clicked(@taskIdToSend, @hintToSend))">
+			<HeaderContent>
+				<MudTh>id</MudTh>
+				<MudTh>name</MudTh>
+				<MudTh>image</MudTh>
+				<MudTh>completed</MudTh>
+				<MudTh>give hint</MudTh>
+			</HeaderContent>
+			<RowTemplate>
+				<MudTd Style="@(context.Completed ? $"background-color:#A5D6A7;" : $"background-color:#EF9A9A;")">@context.Id</MudTd>
+				<MudTd Style="@(context.Completed ? $"background-color:#A5D6A7;" : $"background-color:#EF9A9A;")">@context.Name</MudTd>
+				<MudTd Style="@(context.Completed ? $"background-color:#A5D6A7;" : $"background-color:#EF9A9A;")">@context.ImageId</MudTd>
+				<MudTd Style="@(context.Completed ? $"background-color:#A5D6A7;" : $"background-color:#EF9A9A;")">@context.Completed</MudTd>
+				<MudTd DataLabel="Hint" Style="@(context.Completed ? $"background-color:#A5D6A7;" : $"background-color:#EF9A9A;")">
+					@context.Hint
+				</MudTd>
+			</RowTemplate>
+			<RowEditingTemplate>
+				@{
+					taskIdToSend = context.Id;
+					hintToSend = context.Hint;
+					<MudTd Style="@(context.Completed ? $"background-color:#A5D6A7;" : $"background-color:#EF9A9A;")">@context.Id</MudTd>
+					<MudTd Style="@(context.Completed ? $"background-color:#A5D6A7;" : $"background-color:#EF9A9A;")">@context.Name</MudTd>
+					<MudTd Style="@(context.Completed ? $"background-color:#A5D6A7;" : $"background-color:#EF9A9A;")">@context.ImageId</MudTd>
+					<MudTd Style="@(context.Completed ? $"background-color:#A5D6A7;" : $"background-color:#EF9A9A;")">@context.Completed</MudTd>
+					<MudTd DataLabel="Hint" Style="@(context.Completed ? $"background-color:#A5D6A7;" : $"background-color:#EF9A9A;")">
+						<MudTextField @bind-Value="@context.Hint" T="string" Label="New hint" Variant="Variant.Text" Lines="2" />
+						
+					</MudTd>
+				}
+			</RowEditingTemplate>
+		</MudTable>
+	}
+
+}
+@code {
+
+	public int taskIdToSend;
+	public string hintToSend;
+
+	public async void SendHintButton_Clicked(int taskId, string hint)
+	{
+		await TaskService.SendHint(taskId, hint);
+	}
+}
