@@ -66,7 +66,6 @@ public class Marauder2DController : MonoBehaviour
 
         GameObject[] prefabInstances = GameObject.FindGameObjectsWithTag("Blueprint");
 
-        // Loop through the array and destroy each instance
         foreach (var instance in prefabInstances)
         {
             Destroy(instance);
@@ -141,7 +140,7 @@ public class Marauder2DController : MonoBehaviour
             GameObject mapUser = GameObject.Find(m.id);
 
             string[] coords = m.message.Split(';');
-            Vector3 v = new Vector3(float.Parse(coords[0]), float.Parse(coords[1]), float.Parse(coords[2]));
+            Vector3 v = new Vector3(float.Parse(coords[0]), 0f, float.Parse(coords[2]));
             if (mapUser)
             {
                 mapUser.transform.position = v;
@@ -168,7 +167,8 @@ public class Marauder2DController : MonoBehaviour
             information = new Information
             {
                 port = 1111,
-                address = "127.0.0.1",
+                // address = "127.0.0.1",
+                address = "152.66.169.230",
                 walls = null,
                 targets = null
             };

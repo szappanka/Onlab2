@@ -22,7 +22,7 @@ public class MapUser : MonoBehaviour
         try
         {
             float x = float.Parse(coordinates[0]);
-            float y = float.Parse(coordinates[1]);
+            float y = 0f;
             float z = float.Parse(coordinates[2]);
             transform.position = new Vector3(x, y, z);
         } catch (Exception e)
