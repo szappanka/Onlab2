@@ -41,4 +41,8 @@ public class BluePrintLine : MonoBehaviour
             }
         }
     }
+
+    public void SelfDestroy() {
+        Destroy(gameObject);
+    }
 }

@@ -62,13 +62,22 @@ public class Marauder2DController : MonoBehaviour
 
     private void BlueprintInit(string message)
     {
-        
+        // törölük az összes "Blueprint" tages objektumot
+
+        GameObject[] prefabInstances = GameObject.FindGameObjectsWithTag("Blueprint");
+
+        // Loop through the array and destroy each instance
+        foreach (var instance in prefabInstances)
+        {
+            Destroy(instance);
+        }
+
+
         string[] vectors = message.Split('#');
         for (int i = 0; i < vectors.Length; i++)
         {
             Vector3 v = JsonUtility.FromJson<Vector3>(vectors[i]);
             v.y = 1;
-            Debug.Log(v);
             corners.Add(v);
         }
         BlueprintDraw();

@@ -13,10 +13,8 @@ public class MarauderPath : MonoBehaviour
 
     public void Draw()
     {
-        Debug.Log("Draw");
         if(lineRenderer == null)
         {
-            Debug.Log("Drawing is null");
             return;
         }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4433864263548321747}
   m_Layer: 0
   m_Name: Blueprint
-  m_TagString: Untagged
+  m_TagString: Blueprint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8789331340499238918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bcd4cb5431f9314ab2591a85f8574aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e7dcdcbe8fc4bf4e93efd617feb61c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 8789331340499238939}
